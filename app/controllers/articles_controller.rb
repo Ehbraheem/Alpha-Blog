@@ -5,10 +5,10 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    render plain: article_params.inspect
+    # render plain: article_params.inspect
     @article = Article.new article_params
     @article.save
-    redirect_to articles_show(@article)
+    redirect_to article_path(@article)
   end
 
   private
