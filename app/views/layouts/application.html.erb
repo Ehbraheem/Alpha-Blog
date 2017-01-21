@@ -14,5 +14,8 @@
   </div>
   <%= render 'layouts/footer' %>
 
+  <!-- TODO: Fix the current route-->
+  <%= debug(_routes.methods.grep /path/) if Rails.env.development? %>
+
 </body>
 </html>
