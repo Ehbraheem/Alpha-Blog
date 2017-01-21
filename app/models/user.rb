@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
-
+  # association
   has_many :articles
 
+  # bcrypt method for password authentication
+  has_secure_password
+
+  # change email to lowercase with ActiveRecord callback methods
   before_save { self.email = email.downcase! }
 
   validates :username, presence: true,
