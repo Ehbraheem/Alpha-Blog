@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
+  # TODO: Uncomment all pagination support instance variables
+
   def index
     @users = User.all
+    # Pagination support
+    # @users = User.paginate page: params[:page], per_page: 5
   end
 
   def new
@@ -34,6 +38,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find params[:id]
+    # Paginate support
+    # @user_articles = @user.articles.paginate page: params[:page], per_page: 5
   end
 
   private
