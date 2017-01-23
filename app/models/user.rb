@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   # association
-  has_many :articles
+  has_many :articles, dependent: :destroy
 
   # bcrypt method for password authentication
   has_secure_password
