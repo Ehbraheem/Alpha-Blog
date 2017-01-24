@@ -4,13 +4,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:edit, :update, :show, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
   before_action :require_admin, only: [:destroy]
-  # TODO: Uncomment all pagination support instance variables
-  # TODO: Make the controller actions dry
 
   def index
-    @users = User.all
+    # @users = User.all
     # Pagination support
-    # @users = User.paginate page: params[:page], per_page: 5
+    @users = User.paginate page: params[:page], per_page: 5
   end
 
   def new
@@ -42,7 +40,7 @@ class UsersController < ApplicationController
 
   def show
     # Paginate support
-    # @user_articles = @user.articles.paginate page: params[:page], per_page: 5
+    @user_articles = @user.articles.paginate page: params[:page], per_page: 5
   end
 
   def destroy
