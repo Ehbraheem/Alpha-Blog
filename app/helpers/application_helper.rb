@@ -8,7 +8,7 @@ module ApplicationHelper
     image_tag gravatar_url, alt: user.username, class: "img img-circle"
   end
 
-  protected
+  protected # to stop it from being invoked by a route
   def all_category
     Category.all
   end

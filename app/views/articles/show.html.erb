@@ -20,6 +20,8 @@
 
   <%= simple_format @article.description %>
 
+  <%= render 'articles/categories', obj: @article %>
+
   <%= render 'shared/actions', obj: @article, listing: false %>
 
 
